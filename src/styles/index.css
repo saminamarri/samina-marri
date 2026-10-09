@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #FAFAFC;
+    --text-main: #0F172A;
+    --text-muted: #64748B;
+    --card-bg: #FFFFFF;
+    --card-border: rgba(99, 102, 241, 0.15);
+    --accent-purple: #7C3AED;
+    --accent-blue: #2563EB;
+  }
+
+  html.dark {
+    --bg-main: #09090D;
+    --text-main: #F8FAFC;
+    --text-muted: #94A3B8;
+    --card-bg: #121324;
+    --card-border: rgba(139, 92, 246, 0.2);
+    --accent-purple: #8B5CF6;
+    --accent-blue: #38BDF8;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-serif-heading {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+  }
+}
+
+/* Custom Fine Art Canvas & Border Utilities */
+.canvas-texture {
+  background-image: radial-gradient(rgba(139, 92, 246, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+html.light .canvas-texture {
+  background-image: radial-gradient(rgba(99, 102, 241, 0.08) 1px, transparent 0);
+}
+
+.subtle-purple-glow {
+  box-shadow: 0 0 40px -10px rgba(139, 92, 246, 0.25);
+}
+
+.purple-blue-gradient-text {
+  background: linear-gradient(135deg, #A78BFA 0%, #38BDF8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html.light .purple-blue-gradient-text {
+  background: linear-gradient(135deg, #6D28D9 0%, #2563EB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(18, 19, 36, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+html.light .glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8B5CF6;
+}

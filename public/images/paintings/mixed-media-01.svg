@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" width="100%" height="100%">
+  <rect width="1200" height="1500" fill="#131418" />
+  <!-- Embroidery / Thread motif -->
+  <g stroke="#C5A059" stroke-width="1.5" fill="none" opacity="0.5">
+    <path d="M 100 200 L 1100 1300" stroke-dasharray="12 8" />
+    <path d="M 1100 200 L 100 1300" stroke-dasharray="12 8" />
+    <circle cx="600" cy="750" r="300" stroke-width="1" />
+    <circle cx="600" cy="750" r="150" stroke-width="2" />
+  </g>
+  <text x="600" y="1360" font-family="Cormorant Garamond, serif" font-size="24" letter-spacing="3" fill="#A1A1AA" text-anchor="middle">EMBROIDERY &amp; MIXED MEDIA — SAMINA MARRI PRACTICE WORK</text>
+</svg>

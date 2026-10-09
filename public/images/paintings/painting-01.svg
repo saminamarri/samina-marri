@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A181B" />
+      <stop offset="50%" stop-color="#2B2421" />
+      <stop offset="100%" stop-color="#0E0D0E" />
+    </linearGradient>
+    <radialGradient id="goldGlow" cx="60%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#C5A059" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#C5A059" stop-opacity="0" />
+    </radialGradient>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="4" result="noise" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.07 0" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+  </defs>
+  <!-- Background Canvas -->
+  <rect width="1200" height="1500" fill="url(#bg)" />
+  <rect width="1200" height="1500" fill="url(#goldGlow)" />
+  
+  <!-- Abstract Brush Strokes -->
+  <path d="M 150 400 Q 450 150 750 350 T 1050 650" stroke="#C5A059" stroke-width="32" fill="none" opacity="0.4" stroke-linecap="round" />
+  <path d="M 200 900 Q 600 650 950 1100" stroke="#E5D3B3" stroke-width="48" fill="none" opacity="0.25" stroke-linecap="round" />
+  <path d="M 100 1200 C 400 1000 800 1400 1100 1150" stroke="#8C6D38" stroke-width="24" fill="none" opacity="0.5" stroke-linecap="round" />
+
+  <!-- Geometric & Composition Lines -->
+  <circle cx="600" cy="650" r="280" stroke="#C5A059" stroke-width="1.5" fill="none" opacity="0.3" stroke-dasharray="8 6" />
+  <circle cx="600" cy="650" r="340" stroke="#F7F5F0" stroke-width="1" fill="none" opacity="0.15" />
+  
+  <!-- Center Artistic Motif -->
+  <g transform="translate(600, 650)">
+    <polygon points="0,-180 140,100 -140,100" fill="none" stroke="#C5A059" stroke-width="2" opacity="0.6" />
+    <polygon points="0,180 140,-100 -140,-100" fill="none" stroke="#E5D3B3" stroke-width="1" opacity="0.4" />
+  </g>
+
+  <!-- Fine Line Border Frame -->
+  <rect x="60" y="60" width="1080" height="1380" stroke="#C5A059" stroke-width="1" fill="none" opacity="0.25" />
+  
+  <!-- Placeholder Text Overlay -->
+  <text x="600" y="1380" font-family="Cormorant Garamond, serif" font-size="28" letter-spacing="4" fill="#C5A059" text-anchor="middle" opacity="0.7">OIL ON CANVAS — SAMINA MARRI PRACTICE WORK</text>
+</svg>
