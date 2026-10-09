@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { X, ZoomIn, ZoomOut } from 'lucide-react';
+import { X } from 'lucide-react';
+import WatermarkedImage from './WatermarkedImage';
 
 export default function Lightbox({ isOpen, image, title, onClose }) {
   useEffect(() => {
@@ -27,7 +28,7 @@ export default function Lightbox({ isOpen, image, title, onClose }) {
       <button
         onClick={onClose}
         aria-label="Close Lightbox"
-        className="absolute top-6 right-6 p-3 rounded-full bg-[#141417] text-[#F7F5F0] hover:text-[#C5A059] border border-white/10 hover:border-[#C5A059] transition-all z-50"
+        className="absolute top-6 right-6 p-3 rounded-full bg-[#141417] text-[#F7F5F0] hover:text-purple-400 border border-white/10 hover:border-purple-400 transition-all z-50 shadow-2xl"
       >
         <X className="w-6 h-6" />
       </button>
@@ -37,11 +38,13 @@ export default function Lightbox({ isOpen, image, title, onClose }) {
         onClick={(e) => e.stopPropagation()}
         className="relative max-w-5xl max-h-[90vh] flex flex-col items-center justify-center"
       >
-        <img
-          src={image}
-          alt={title}
-          className="max-h-[80vh] w-auto object-contain rounded-lg shadow-2xl border border-white/10"
-        />
+        <div className="rounded-lg overflow-hidden border border-white/10 shadow-2xl">
+          <WatermarkedImage
+            src={image}
+            alt={title}
+            imgClassName="max-h-[80vh] w-auto object-contain rounded-lg"
+          />
+        </div>
         {title && (
           <p className="mt-4 font-serif text-lg text-[#F7F5F0] tracking-wide text-center">
             {title}

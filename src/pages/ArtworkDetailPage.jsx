@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, Maximize2, Quote } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Maximize2, Quote, ShoppingBag } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import Lightbox from '../components/Lightbox';
+import WatermarkedImage from '../components/WatermarkedImage';
 import { artworks } from '../data/artworks';
 
 export default function ArtworkDetailPage() {
@@ -69,9 +70,15 @@ export default function ArtworkDetailPage() {
           {/* LEFT COLUMN: Metadata & Statement */}
           <div className="lg:col-span-5 space-y-8 order-2 lg:order-1">
             <div>
-              <span className="px-3.5 py-1 text-[10px] uppercase tracking-[0.25em] font-bold bg-purple-500/10 text-purple-600 dark:text-purple-400 rounded-full border border-purple-500/20 inline-block mb-3">
-                {artwork.category}
-              </span>
+              <div className="flex items-center gap-3 mb-3">
+                <span className="px-3.5 py-1 text-[10px] uppercase tracking-[0.25em] font-bold bg-purple-500/10 text-purple-600 dark:text-purple-400 rounded-full border border-purple-500/20 inline-block">
+                  {artwork.category}
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-semibold border border-emerald-500/20">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  Available
+                </span>
+              </div>
               <h1 className="text-3xl md:text-5xl font-serif text-slate-900 dark:text-white mb-2 font-bold">
                 {artwork.title}
               </h1>
@@ -90,11 +97,24 @@ export default function ArtworkDetailPage() {
                 <span className="text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">DIMENSIONS</span>
                 <span className="text-slate-900 dark:text-white font-mono">{artwork.dimensions}</span>
               </div>
+              <div className="flex items-center justify-between pb-3 border-b border-purple-500/10 dark:border-purple-400/20">
+                <span className="text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">STATUS</span>
+                <span className="text-emerald-600 dark:text-emerald-400 font-bold">Available for Purchase</span>
+              </div>
               <div className="flex items-center justify-between">
                 <span className="text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">ARTIST</span>
                 <span className="text-purple-600 dark:text-purple-400 font-bold">SAMINA MARRI</span>
               </div>
             </div>
+
+            {/* Inquire for Purchase CTA Button */}
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 text-xs uppercase tracking-[0.2em] text-white bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 px-6 py-4 rounded-xl font-bold shadow-lg shadow-purple-600/25 hover:shadow-purple-500/40 transition-all w-full"
+            >
+              <ShoppingBag className="w-4 h-4" />
+              <span>Inquire for Purchase</span>
+            </Link>
 
             {/* Description */}
             <div className="space-y-3">
@@ -127,20 +147,16 @@ export default function ArtworkDetailPage() {
           {/* RIGHT COLUMN: Image with Lightbox Trigger */}
           <div className="lg:col-span-7 relative group order-1 lg:order-2">
             <div className="relative rounded-3xl overflow-hidden border border-purple-500/20 dark:border-purple-400/30 shadow-2xl bg-slate-100 dark:bg-[#0D0D0F]">
-              <img
+              <WatermarkedImage
                 src={artwork.image}
                 alt={artwork.title}
-                className="w-full h-auto max-h-[75vh] object-contain mx-auto"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = '/images/paintings/painting-01.svg';
-                }}
+                imgClassName="w-full h-auto max-h-[75vh] object-contain mx-auto"
               />
 
               {/* Lightbox Expand Button Overlay */}
               <button
                 onClick={() => setLightboxOpen(true)}
-                className="absolute top-4 right-4 p-3 rounded-full bg-white/90 dark:bg-[#09090D]/80 backdrop-blur-md text-slate-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 border border-purple-500/20 transition-all opacity-90 hover:opacity-100 shadow-xl"
+                className="absolute top-4 right-4 z-20 p-3 rounded-full bg-white/90 dark:bg-[#09090D]/80 backdrop-blur-md text-slate-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 border border-purple-500/20 transition-all opacity-90 hover:opacity-100 shadow-xl"
                 aria-label="Expand Artwork Lightbox"
               >
                 <Maximize2 className="w-4 h-4" />

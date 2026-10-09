@@ -577,6 +577,18 @@ export const artworks = [
     statement: "Working in 3D allows the eye to travel around light shadows and physical volume.",
     image: "/images/sculpture/sculpture-01.svg",
     featured: true
+  },
+  {
+    id: "bronze-relief-elder-portrait",
+    title: "Wisdom of Generations (Fiber Relief Portrait)",
+    category: "Sculpture",
+    medium: "Fiber Sculpture",
+    year: "2025",
+    dimensions: "24 × 16 × 4 in",
+    description: "A deeply expressive high-relief fiber sculpture portrait with bronze patina finish, depicting a venerable elder woman wrapped in a headscarf and ornate traditional embroidered tunic with metallic studs.",
+    statement: "Translating cultural dignity, lived experience, and traditional textile motifs into tactile fiber sculpture.",
+    image: "/images/sculpture/bronze-relief-elder-portrait.jpg",
+    featured: true
   }
 ];
 
