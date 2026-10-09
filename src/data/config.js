@@ -11,7 +11,7 @@ export const siteConfig = {
   // Email Service Configuration for Direct Inbox Delivery
   emailService: {
     provider: "web3forms", // 'web3forms' or 'formspree'
-    web3formsAccessKey: "YOUR_WEB3FORMS_ACCESS_KEY", // Replace with your Web3Forms access key
+    web3formsAccessKey: "aff4d181-05dc-4177-a891-43675bdb4db0", // Aapki access key lag gayi hai
     formspreeEndpoint: ""
   },
 
